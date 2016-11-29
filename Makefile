@@ -1,4 +1,8 @@
-all:
-	g++ -W -Wall -Werror -ansi -pedantic main.cpp
-compile:
-	g++ -W -Wall -Werror -ansi -pedantic main.cpp
+all: src/main.cpp
+	g++ -W -Wall -Werror -ansi -pedantic -c src/main.cpp
+	mkdir -p bin
+	g++ main.o -o bin/rshell
+rshell: src/main.cpp
+	g++ -W -Wall -Werror -ansi -pedantic -c src/main.cpp
+	mkdir -p bin
+	g++ main.o -o bin/rshell
